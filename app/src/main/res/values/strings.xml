@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AciertaPalabra</string>
+    <string name="TextoTextView">_ _ _ _ _</string>
+    <string name="EditTextTexto">Palabra a introducir</string>
+    <string name="TextoBotonEnviar">Validar</string>
+    <string name="IntentosTextView">5 intentos</string>
+</resources>
