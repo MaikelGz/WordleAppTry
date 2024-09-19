@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editTextNombre : EditText
     private lateinit var textViewNombre : TextView
     private var listaPalabras= listOf("Jesus", "Adios", "Roblox", "Garen")
-    private var palabra = "listaPalabras."
+    private var palabra = ""
 
     /* Inicia los elementos buscandolos por su id */
     private fun iniciarElementos() {
@@ -23,13 +23,32 @@ class MainActivity : AppCompatActivity() {
         editTextNombre = findViewById(R.id.escribeTuNombre)
         textViewNombre = findViewById(R.id.textViewPalabra)
     }
+
+    private fun elegirPalabra() {
+        this.palabra=listaPalabras.random()
+    }
+
     private fun validar(){
         buttonEnviarNombre.setOnClickListener { view_ ->
-            if( editTextNombre.text.length<2){
-                Toast.makeText(this, "Tamaño inferior a 2 caracteres", Toast.LENGTH_SHORT).show()
+            if( editTextNombre.text.length<5){
+                Toast.makeText(this, "Tamaño inferior a 5 caracteres", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(this,"Boton pulsado", Toast.LENGTH_SHORT).show()
-                textViewNombre.text = editTextNombre.text
+
+                val intento = editTextNombre.text
+                var num=0
+                var newText = ""
+
+                for (letra in palabra) {
+                    if(intento.getOrNull(num)==letra){
+                        newText+=letra+" "
+                    }else{
+                        newText+="_ "
+                    }
+                    num++
+                }
+
+                textViewNombre.text = newText
                 editTextNombre.text.clear()
             }
 
@@ -46,6 +65,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         iniciarElementos()
+        elegirPalabra()
         validar()
     }
+
+
 }
