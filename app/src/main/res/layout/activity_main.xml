@@ -28,6 +28,18 @@
         android:layout_margin="5dp"
         />
 
+    <TextView
+        android:id="@+id/textViewPremio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_margin="70dp"
+        android:text="@string/MensajePremio"
+        android:textColor="#008000"
+        android:textSize="30sp"
+        android:visibility="gone"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/buttonEnviarNombre"
         android:layout_width="match_parent"
